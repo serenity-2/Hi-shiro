@@ -1,0 +1,20 @@
+#DataSource Config
+spring:
+  datasource:
+    driver-class-name: org.h2.Driver
+    schema: classpath:db/schema-h2.sql
+#    data: classpath:db/data-h2.sql
+    url: jdbc:h2:mem:testdb
+    platform: h2
+  h2:
+    console:
+      enabled: true
+
+mybatis-plus:
+  mapper-locations: com/jzjr/hishiro/dao/*.xml
+  typeAliasesPackage: com.jzjr.hishiro.eneity
+
+logging:
+  level:
+    com.jzjr.hishiro.dao: debug
+

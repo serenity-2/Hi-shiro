@@ -50,7 +50,9 @@ public class ShiroConfig {
     private Map<String, String> filterChainDefinitionMap() {
         LinkedHashMap<String, String> filterMap = new LinkedHashMap<>();
         //允许匿名访问
+        filterMap.put("/user/get/name","anon");
         filterMap.put("/test/echo","anon");
+        filterMap.put("/**","anon");
         //需要admin角色
         filterMap.put("/test/admin","roles[ADMIN]");
         //需要normal角色
@@ -58,7 +60,7 @@ public class ShiroConfig {
         //推出
         filterMap.put("/logout","logout");
         //剩余的url，需要经过认证
-        filterMap.put("/**","authc");
+//        filterMap.put("/**","authc");
         return filterMap;
     }
 
